@@ -1,0 +1,173 @@
+:root {
+  --bg-left: #241818;
+  --bg-right: #950000;
+  --card: #080202;
+  --primary: #ffffff;
+  --secondary: #ffffff;
+  --text-muted: #cfcfcf;
+  --shadow: rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(120deg, var(--bg-left), var(--bg-right));
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.card {
+  width: 100%;
+  background: transparent;
+  text-align: center;
+}
+
+.icon,
+h1,
+.subtitle,
+.selected-date,
+.message {
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+input[type="datetime-local"] {
+  background: #120606;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+button {
+  background: #0b0303;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.time-box {
+  width: 100px;
+  height: 113px;
+  background: var(--card);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-box span {
+  color: var(--primary);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.35);
+}
+
+.time-box small {
+  color: var(--secondary);
+  margin-top: 10px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.totals {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 28px;
+}
+
+.total-box span {
+  display: block;
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.total-box small {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="datetime-local"],
+  button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .counter {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .time-box {
+    width: 90px;
+    height: 105px;
+  }
+
+  .time-box span {
+    font-size: 38px;
+  }
+
+  .totals {
+    flex-direction: column;
+    gap: 18px;
+  }
+}

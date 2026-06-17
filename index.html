@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quanto Tempo Falta?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <div class="icon">⏳</div>
+
+      <h1>Quanto Tempo Falta?</h1>
+      <p class="subtitle">Escolha a data e horário</p>
+
+      <div class="form-group">
+        <input type="datetime-local" id="targetDate" />
+        <button id="saveButton">Salvar data</button>
+      </div>
+
+      <p id="selectedDate" class="selected-date">Nenhuma data escolhida ainda.</p>
+
+      <section class="counter">
+        <div class="time-box">
+          <span id="days">0</span>
+          <small>Dias</small>
+        </div>
+
+        <div class="time-box">
+          <span id="hours">0</span>
+          <small>Horas</small>
+        </div>
+
+        <div class="time-box">
+          <span id="minutes">0</span>
+          <small>Minutos</small>
+        </div>
+
+        <div class="time-box">
+          <span id="seconds">0</span>
+          <small>Segundos</small>
+        </div>
+      </section>
+
+      <section class="totals">
+        <div class="total-box">
+          <span id="totalHours">0</span>
+          <small>Horas totais</small>
+        </div>
+
+        <div class="total-box">
+          <span id="totalMinutes">0</span>
+          <small>Minutos totais</small>
+        </div>
+
+        <div class="total-box">
+          <span id="totalSeconds">0</span>
+          <small>Segundos totais</small>
+        </div>
+      </section>
+
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
