@@ -8,18 +8,11 @@
 </head>
 <body>
   <main class="container">
-    <section class="card">
-      <div class="icon">⏳</div>
-
-      <h1>Quanto Tempo Falta?</h1>
-      <p class="subtitle">Escolha a data e horário</p>
-
-      <div class="form-group">
+    <section class="countdown-card">
+      <form class="form-group" id="countdownForm">
         <input type="datetime-local" id="targetDate" />
-        <button id="saveButton">Salvar data</button>
-      </div>
-
-      <p id="selectedDate" class="selected-date">Nenhuma data escolhida ainda.</p>
+        <button type="submit">Salvar data</button>
+      </form>
 
       <section class="counter">
         <div class="time-box">

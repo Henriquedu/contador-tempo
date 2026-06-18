@@ -1,10 +1,9 @@
 :root {
   --bg-left: #241818;
-  --bg-right: #950000;
-  --card: #080202;
-  --primary: #ffffff;
-  --secondary: #ffffff;
-  --text-muted: #cfcfcf;
+  --bg-right: #990000;
+  --card-bg: #090202;
+  --text: #ffffff;
+  --muted: #f1f1f1;
   --shadow: rgba(0, 0, 0, 0.45);
 }
 
@@ -18,7 +17,7 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(120deg, var(--bg-left), var(--bg-right));
-  color: var(--primary);
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,39 +26,36 @@ body {
 
 .container {
   width: 100%;
-  max-width: 900px;
+  display: flex;
+  justify-content: center;
 }
 
-.card {
+.countdown-card {
   width: 100%;
-  background: transparent;
+  max-width: 720px;
   text-align: center;
-}
-
-.icon,
-h1,
-.subtitle,
-.selected-date,
-.message {
-  display: none;
 }
 
 .form-group {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 35px;
+  gap: 14px;
+  margin-bottom: 36px;
   flex-wrap: wrap;
 }
 
 input[type="datetime-local"] {
-  background: #120606;
-  color: #ffffff;
+  width: 270px;
+  height: 46px;
+  background: var(--card-bg);
+  color: var(--text);
   border: none;
-  border-radius: 6px;
-  padding: 12px 14px;
+  border-radius: 5px;
+  padding: 0 14px;
   font-size: 14px;
+  font-weight: 700;
   outline: none;
+  box-shadow: 0 8px 18px var(--shadow);
 }
 
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
@@ -68,15 +64,17 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 
 button {
-  background: #0b0303;
-  color: #ffffff;
+  width: 130px;
+  height: 46px;
+  background: var(--card-bg);
+  color: var(--text);
   border: none;
-  border-radius: 6px;
-  padding: 12px 18px;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 8px 18px var(--shadow);
+  transition: transform 0.2s ease;
 }
 
 button:hover {
@@ -84,63 +82,111 @@ button:hover {
 }
 
 .counter {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 26px;
+  border-radius: 2px;
+  box-shadow: 0 12px 22px var(--shadow);
 }
 
 .time-box {
-  width: 100px;
-  height: 113px;
-  background: var(--card);
-  border-radius: 4px;
-  box-shadow: 0 10px 20px var(--shadow);
+  width: 120px;
+  height: 135px;
+  background: var(--card-bg);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px var(--shadow);
 }
 
 .time-box span {
-  color: var(--primary);
-  font-size: 42px;
+  font-size: 56px;
   font-weight: 700;
   line-height: 1;
+  color: var(--text);
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.35);
 }
 
 .time-box small {
-  color: var(--secondary);
   margin-top: 10px;
-  font-size: 7px;
+  color: var(--muted);
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
 .totals {
+  width: 520px;
+  margin: 35px auto 0;
   display: flex;
-  justify-content: center;
-  gap: 45px;
-  margin-top: 28px;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.total-box {
+  flex: 1;
 }
 
 .total-box span {
   display: block;
-  color: var(--primary);
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--text);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .total-box small {
   display: block;
-  color: var(--text-muted);
-  margin-top: 6px;
-  font-size: 9px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 }
 
-@media (max-width: 600px) {
+.message {
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .counter {
+    gap: 18px;
+  }
+
+  .time-box {
+    width: 100px;
+    height: 120px;
+  }
+
+  .time-box span {
+    font-size: 46px;
+  }
+
+  .totals {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .total-box span {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+
   .form-group {
     flex-direction: column;
     align-items: center;
@@ -154,20 +200,17 @@ button:hover {
 
   .counter {
     flex-wrap: wrap;
+    max-width: 280px;
     gap: 16px;
   }
 
   .time-box {
-    width: 90px;
-    height: 105px;
-  }
-
-  .time-box span {
-    font-size: 38px;
+    width: 105px;
+    height: 120px;
   }
 
   .totals {
     flex-direction: column;
-    gap: 18px;
+    gap: 22px;
   }
 }
