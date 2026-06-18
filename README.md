@@ -8,9 +8,7 @@ Escolha um momento no futuro e veja, em tempo real, exatamente quanto falta para
 
 Você pode acessar o projeto pelo GitHub Pages:
 
-**https://henriquedu.github.io/quanto-falta/**
-
-> *(Atualize o link após publicar o repositório.)*
+**https://henriquedu.github.io/contador-tempo/**
 
 ---
 
