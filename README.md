@@ -17,7 +17,7 @@ Aplicação web para acompanhar, em tempo real, quanto falta para uma data e hor
 
 ## 📖 Sobre
 
-O **Quanto Falta?** é uma aplicação web desenvolvida para criar uma contagem regressiva até uma data e horário escolhidos pelo usuário.
+O **Quanto Falta?** é uma aplicação web desenvolvida para acompanhar uma data e horário escolhidos pelo usuário. Para datas futuras, exibe uma contagem regressiva; para datas passadas, informa quanto tempo já se passou desde o momento selecionado.
 
 O projeto foi criado com foco em simplicidade, boa experiência visual e prática com **HTML, CSS e JavaScript**, utilizando recursos do navegador como atualização em tempo real e armazenamento local.
 
@@ -27,8 +27,9 @@ A data configurada fica salva no navegador, permitindo que a contagem continue d
 
 ## ✨ Funcionalidades
 
-- Escolha de data e horário futuros
-- Contagem regressiva em tempo real
+- Escolha de qualquer data e horário
+- Contagem regressiva em tempo real para datas futuras
+- Contagem progressiva em tempo real para datas passadas
 - Exibição de dias, horas, minutos e segundos
 - Cálculo de horas, minutos e segundos totais restantes
 - Salvamento da data com `localStorage`
@@ -105,9 +106,9 @@ Também é possível executar pelo VS Code usando a extensão **Live Server**.
 ## 💻 Como usar
 
 1. Abra a aplicação.
-2. Escolha uma data e horário futuros.
+2. Escolha uma data e horário.
 3. Clique em **Salvar data**.
-4. A contagem regressiva será iniciada automaticamente.
+4. Para uma data futura, a contagem regressiva será iniciada automaticamente. Para uma data passada, o sistema exibirá quanto tempo já se passou.
 5. A data permanecerá salva mesmo após fechar ou recarregar a página.
 
 ---
